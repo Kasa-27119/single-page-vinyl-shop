@@ -4,52 +4,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- mapbox css -->
-    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- jquery ui css -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
+    <!-- fullpage css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.css" integrity="sha512-AIwt5sjXSKDo4t0KSQ/eAuy43kQMc1hYtIKLxaFrHd26nQFzMo1FJdBIickVyGXnhm2xB2OOYBqMBgu3dBU4KA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!-- custom css -->
     <link rel="stylesheet" href="css\style.min.css">
     <title>Gulp</title>
 </head>
 
 <body>
-    <h2>Gulp Boilerplate</h2>
+    <!-- navbar -->
+    <nav id="navbar">
+        <h3>Spin City Records</h3>
 
-    <!-- datepicker input -->
-    <input type="text" id="datepicker" class="datepicker">
+        <!-- navlinks -->
+        <div class="nav-container">
+            <a href="#">Sign Up</a>
+            <a href="#">About Us</a>
+            <a href="#">Vinyls</a>
+            <a href="#">Blog</a>
+        </div>
 
-    <!-- map div -->
-    <div id="map"></div>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </nav>
+
+    <!-- fullpage div -->
+    <div id="fullpage">
+
+        <!-- section 1 -->
+        <div class="section">
+
+            <!-- slide 1 -->
+            <div class="slide" id="slide1">
+                <!-- vinyl background as a fixed image test -->
+                <img src="imgs\image1.jpg" alt="vinyls" id="vinyls-bg">
+
+                <h2 id="title">Spin City Records<br>Sign-Up</h2>
+
+                <!-- sign up form -->
+                <div id="signUpForm">
+
+                    <!-- name field -->
+                    <div class="form-field-container">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" placeholder="Username123" required>
+                    </div>
+
+                    <!-- email field -->
+                    <div class="form-field-container">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="email@gmail.com" required>
+                    </div>
+
+                    <!-- password field -->
+                    <div class="form-field-container">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="password123" required>
+                    </div>
+
+                    <!-- submit button -->
+                    <button id="submitButton">Sign Up</button>
+                </div>
+            </div>
+
+            <!-- slide 2 -->
+            <div class="slide">
+                <h2>Hello</h2>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="slide" id="slide2-1"></div>
+        </div>
+        <div class="section"> section 3 </div>
+        <div class="section"> section 4 </div>
+    </div>
+
 
     <!-- swiper -->
-    <div class="swiper">
-        <!-- Additional required wrapper -->
+    <!-- <div class="swiper">
+        
         <div class="swiper-wrapper">
-            <!-- Slides -->
+            
             <div class="swiper-slide">Slide 1</div>
             <div class="swiper-slide">Slide 2</div>
             <div class="swiper-slide">Slide 3</div>
             ...
         </div>
-        <!-- If we need pagination -->
+       
         <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
+      
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
 
-        <!-- If we need scrollbar -->
+       
         <div class="swiper-scrollbar"></div>
-    </div>
+    </div> -->
 
     <!-- font awesome js -->
     <script src="https://kit.fontawesome.com/42e32376cc.js" crossorigin="anonymous"></script>
-
-    <!-- mapbox js -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 
     <!-- swiper js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -59,6 +119,9 @@
 
     <!-- jquery ui js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+
+    <!-- fullpage js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.js" integrity="sha512-yHHLi2ZwgtW9QNVZd0asqMyWGJ6Kx73ijKlGWSi3MwYFB5ZzOJV8wPtopKr6muHk5SERgF3OB/2dZj3StlI34w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- custom js -->
     <script src="./js/script.min.js"></script>

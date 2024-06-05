@@ -8,8 +8,8 @@ $(document).ready(function() {
         // license used - open source
         licenseKey: "gplv3-license",
         autoScrolling: true,
-        scrollHorizontally: true,
-        controlArrows: true,
+        scrollHorizontally: false,
+        controlArrows: false,
         fixedElement: "#navbar",
         fitToSection: true,
     });
@@ -73,7 +73,7 @@ const vinyls = [
         artist: "Various",
         price: "$39.99",
         genre: "Soundtrack",
-        image: ["https://www.jbhifi.co.nz/cdn/shop/products/406576-Product-0-I-638312109029572569.jpg?v=1695614169", "https://images.unsplash.com/photo-1608481860536-b226f691fadd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        image: ["https://www.jbhifi.co.nz/cdn/shop/products/406576-Product-0-I-638312109029572569.jpg?v=1695614169", "https://images.unsplash.com/photo-1602848597239-b63398805e3f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     },
     {
         id: 7,
@@ -81,7 +81,7 @@ const vinyls = [
         artist: "The 1975",
         price: "$65.99",
         genre: "Alternative",
-        image: ["https://www.jbhifi.co.nz/cdn/shop/products/420538-Product-0-I-638240339268806574_aaf62e7b-e0b0-44ed-8930-213cb02fd708.jpg?v=1696450417", "https://images.unsplash.com/photo-1608481860536-b226f691fadd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        image: ["https://www.jbhifi.co.nz/cdn/shop/products/420538-Product-0-I-638240339268806574_aaf62e7b-e0b0-44ed-8930-213cb02fd708.jpg?v=1696450417", "https://images.unsplash.com/photo-1602848597239-b63398805e3f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     },
     {
         id: 8,
@@ -97,7 +97,7 @@ const vinyls = [
         artist: "Xxxtentacion",
         price: "$37.99",
         genre: "Hip Hop",
-        image: ["https://www.jbhifi.co.nz/cdn/shop/products/358114-Product-0-I-638240326875284811_13eb7a71-7aeb-4839-8da5-eb706bbc6e72.jpg?v=1696201235", "https://images.unsplash.com/photo-1608481860536-b226f691fadd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        image: ["https://www.jbhifi.co.nz/cdn/shop/products/358114-Product-0-I-638240326875284811_13eb7a71-7aeb-4839-8da5-eb706bbc6e72.jpg?v=1696201235", "https://images.unsplash.com/photo-1602848597239-b63398805e3f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     },
     {
         id: 10,
@@ -113,7 +113,7 @@ const vinyls = [
         artist: "Melanie Martinez",
         price: "$77.99",
         genre: "Pop",
-        image: ["https://www.jbhifi.co.nz/cdn/shop/products/372796-Product-0-I-638312078406020997.jpg?v=1695611110", "https://www.jbhifi.co.nz/cdn/shop/files/439249-Product-1-I-638520467405420202.jpg?v=1716450006"],
+        image: ["https://www.jbhifi.co.nz/cdn/shop/files/439249-Product-1-I-638520467405420202.jpg?v=1716450006", "https://images.unsplash.com/photo-1602848597239-b63398805e3f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     },
     {
         id: 12,
@@ -121,7 +121,7 @@ const vinyls = [
         artist: "David Bowie",
         price: "$31.99",
         genre: "Rock",
-        image: ["https://www.jbhifi.co.nz/cdn/shop/products/317049-Product-0-I-638289893301870369_790b45a7-5c68-49b2-8161-cc2e355d919e.jpg?v=1697085256", "https://images.unsplash.com/photo-1608481860536-b226f691fadd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        image: ["https://www.jbhifi.co.nz/cdn/shop/products/317049-Product-0-I-638289893301870369_790b45a7-5c68-49b2-8161-cc2e355d919e.jpg?v=1697085256", "https://images.unsplash.com/photo-1602848597239-b63398805e3f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     },
     {
         id: 13,
@@ -153,7 +153,7 @@ const vinyls = [
         artist: "Pinkpantheress",
         price: "$52.99",
         genre: "Pop",
-        image: ["https://www.jbhifi.co.nz/cdn/shop/products/433000-Product-0-I-638345255422195242.jpg?v=1698928815", "https://images.unsplash.com/photo-1608481860536-b226f691fadd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        image: ["https://www.jbhifi.co.nz/cdn/shop/products/433000-Product-0-I-638345255422195242.jpg?v=1698928815", "https://images.unsplash.com/photo-1602848597239-b63398805e3f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     },
     {
         id: 17,
@@ -161,7 +161,7 @@ const vinyls = [
         artist: "Lil Peep",
         price: "$46.99",
         genre: "Hip Hop",
-        image: ["https://www.jbhifi.co.nz/cdn/shop/products/436622-Product-0-I-638430790985867131.jpg?v=1707482350", "https://images.unsplash.com/photo-1608481860536-b226f691fadd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        image: ["https://www.jbhifi.co.nz/cdn/shop/products/436622-Product-0-I-638430790985867131.jpg?v=1707482350", "https://images.unsplash.com/photo-1602848597239-b63398805e3f?q=80&w=2075&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     },
     {
         id: 18,

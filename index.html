@@ -9,16 +9,22 @@
     <!-- jquery ui css -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/smoothness/jquery-ui.css">
     <!-- fullpage css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.css" integrity="sha512-AIwt5sjXSKDo4t0KSQ/eAuy43kQMc1hYtIKLxaFrHd26nQFzMo1FJdBIickVyGXnhm2xB2OOYBqMBgu3dBU4KA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.css"
+        integrity="sha512-AIwt5sjXSKDo4t0KSQ/eAuy43kQMc1hYtIKLxaFrHd26nQFzMo1FJdBIickVyGXnhm2xB2OOYBqMBgu3dBU4KA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css -->
-    <link rel="stylesheet" href="css\style.min.css">
+    <link rel="stylesheet" href="css\style.css">
     <title>Gulp</title>
 </head>
 
 <body>
     <!-- navbar -->
     <nav id="navbar">
-        <h3>Spin City Records</h3>
+        <!-- nav logo -->
+        <div class="nav-logo">
+            <h3>Spin City Records</h3>
+            <i class="fa-solid fa-compact-disc"></i>
+        </div>
 
         <!-- navlinks -->
         <div class="nav-container">
@@ -28,6 +34,7 @@
             <a href="#">Blog</a>
         </div>
 
+        <!-- nav icons -->
         <div class="nav-icons">
             <i class="fa-solid fa-magnifying-glass"></i>
             <i class="fa-solid fa-cart-shopping"></i>
@@ -40,10 +47,10 @@
         <!-- section 1 -->
         <div class="section">
 
-            <!-- slide 1 -->
+            <!-- slide 1 - sign up page -->
             <div class="slide" id="slide1">
                 <!-- vinyl background as a fixed image test -->
-                <img src="imgs\image1.jpg" alt="vinyls" id="vinyls-bg">
+                <!-- <img src="imgs\image1.jpg" alt="vinyls" id="vinyls-bg"> -->
 
                 <h2 id="title">Spin City Records<br>Sign-Up</h2>
 
@@ -73,14 +80,79 @@
                 </div>
             </div>
 
-            <!-- slide 2 -->
+            <!-- slide -->
             <div class="slide">
-                <h2>Hello</h2>
             </div>
         </div>
 
+        <!-- section 2 -->
         <div class="section">
-            <div class="slide" id="slide2-1"></div>
+
+            <!-- slide 2 - vinyl population -->
+            <div class="slide" id="slide2">
+                <h2>Vinyls</h2>
+
+                <!-- filter/sorting container -->
+                <div class="filter-sort-container">
+
+                    <!-- filter container -->
+                    <div class="filter-container">
+                        <h3>Filters</h3>
+
+                        <!-- filter btn container -->
+                        <div class="filter-btn-container">
+
+                            <!-- decade filter container -->
+                            <div class="decade-filter-container">
+                                <!-- decade filter -->
+                                <label for="decade">Decade</label>
+                                <select name="decade" id="decadeFilter">
+                                    <option value="1950s">1950s</option>
+                                    <option value="1960s">1960s</option>
+                                    <option value="1970s">1970s</option>
+                                    <option value="1980s">1980s</option>
+                                    <option value="1990s">1990s</option>
+                                    <option value="2000s">2000s</option>
+                                    <option value="2010s">2010s</option>
+                                    <option value="2020s">2020s</option>
+                                </select>
+                            </div>
+
+                            <!-- genre filter container -->
+                            <div class="genre-filter-container">
+                                <!-- genre filter -->
+                                <label for="genre">Genre</label>
+                                <select name="genre" id="genreFilter">
+                                    <option value="Rock">Rock</option>
+                                    <option value="Pop">Pop</option>
+                                    <option value="Hip Hop">Hip Hop</option>
+                                    <option value="RnB">RnB</option>
+                                    <option value="Alternative">Alternative</option>
+                                    <option value="Electronic">Electronic</option>
+                                    <option value="Soundtrack">Soundtrack</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sorting container -->
+                    <div class="sorting-container">
+                        <h3>Sorting</h3>
+
+                        <!-- sorting btn container -->
+                        <div class="sorting-btn-container">
+                            <button class="sorting-btn">Newest to Oldest</button>
+                            <button class="sorting-btn">Oldest to Newest</button>
+                            <button class="sorting-btn">Artist Name</button>
+                            <button class="sorting-btn">Album Name</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- vinyl grid container - populated by js -->
+                <div class="vinyl-grid-container" id="vinylContainer"></div>
+            </div>
         </div>
         <div class="section"> section 3 </div>
         <div class="section"> section 4 </div>
@@ -121,7 +193,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
 
     <!-- fullpage js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.js" integrity="sha512-yHHLi2ZwgtW9QNVZd0asqMyWGJ6Kx73ijKlGWSi3MwYFB5ZzOJV8wPtopKr6muHk5SERgF3OB/2dZj3StlI34w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.js"
+        integrity="sha512-yHHLi2ZwgtW9QNVZd0asqMyWGJ6Kx73ijKlGWSi3MwYFB5ZzOJV8wPtopKr6muHk5SERgF3OB/2dZj3StlI34w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- custom js -->
     <script src="./js/script.min.js"></script>

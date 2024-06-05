@@ -19,23 +19,37 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            
-            h3, .fa-solid {
-                font-size: 2.4em;
+
+            h3,
+            .fa-solid {
+                font-size: 2em;
+            }
+
+            h3,
+            a {
+                font-family: "Lexend", sans-serif;
+            }
+
+            .nav-logo {
+                display: flex;
+
+                .fa-compact-disc {
+                    margin-left: 15px;
+                }
             }
 
             .nav-container {
-                min-width: 50%;
+                min-width: 40%;
                 display: flex;
                 justify-content: space-evenly;
                 font-size: 1.4em;
-                
+
                 a {
                     text-decoration: none;
                     color: #fffef7;
                 }
             }
-            
+
             .nav-icons {
                 min-width: 10%;
                 display: flex;
@@ -46,12 +60,15 @@
         }
 
         .section {
+            min-width: 100vw;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3em;
             color: white;
             font-family: "Lexend", sans-serif;
+            ;
 
             #title {
                 text-align: center;
@@ -62,7 +79,6 @@
 
             .slide {
                 min-width: 100vw;
-                background-color: darkmagenta;
 
                 .fp-overflow {
                     display: flex;
@@ -72,8 +88,9 @@
                 }
             }
 
+            // slide 1 - sign up
             #slide1 {
-                // background-image: url(imgs\image2.jpg);
+                background-image: url('../imgs/image1.jpg');
                 background-color: violet;
 
                 #vinyls-bg {
@@ -90,31 +107,138 @@
                     min-width: 25vw;
                     margin: 10px 0;
                     z-index: 10;
-    
+
                     .form-field-container {
                         display: flex;
                         flex-direction: column;
                         margin: 12px 0;
-    
+
                         label {
                             font-size: 0.5em;
                         }
-    
+
                         input {
                             padding: 1.2%;
                             font-size: 0.4em;
                         }
                     }
-    
+
                     #submitButton {
                         margin-top: 40px;
                         font-size: 0.5em;
                         min-width: 100%;
                         padding: 1.2%;
                     }
-    
+
                 }
             }
+
+            // slide 2 - vinyl population
+            #slide2 {
+                background-color: #f4f3ef;
+
+                h2 {
+                    color: #e74c3c;
+                }
+
+                h3,
+                label {
+                    color: #f4f3ef;
+                }
+
+                .filter-sort-container {
+                    min-width: 100%;
+                    background-color: #0d6d96;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .filter-container,
+                    .sorting-container {
+                        margin: 0.4em 0;
+
+                        h3 {
+                            text-align: center;
+                        }
+
+                        .decade-filter-container,
+                        .genre-filter-container {
+
+                            label {
+                                font-size: 0.7em;
+                                text-align: center;
+                            }
+                        }
+
+                        .filter-btn-container {
+                            display: flex;
+
+                            .decade-filter-container,
+                            .genre-filter-container {
+                                display: flex;
+                                flex-direction: column;
+                                margin: 0 1.2em;
+                            }
+
+
+                        }
+                    }
+
+                }
+
+                .vinyl-grid-container {
+                    // min-width: 100%;
+                    background-color: #0d6d96;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 15px 20px;
+                    // padding: 20px 40px;
+
+                    .vinyl-item-card {
+                        background-color: antiquewhite;
+                        padding: 0.1em;
+
+                        .vinyl-item-details {
+                            padding: 0 0.2em;
+
+                            h2 {
+                                font-size: 0.8em;
+                            }
+
+                            h4 {
+                                font-size: 0.5em;
+                            }
+
+                            h2, h4 {
+                                color: #e74c3c;
+                            }
+                        }
+
+                        .swiper {
+                            min-width: 85%;
+                            min-height: 35%;
+                            border: 1px solid #e74c3c;
+                            border-top-left-radius: 20px;
+                            border-top-right-radius: 20px;
+    
+                            .vinyl-item-img {
+                                min-width: 100%;
+                                min-height: 100%;
+                                object-fit: cover;
+                                object-position: center;
+    
+                            }
+                        }
+                    }
+
+
+
+                }
+
+
+            }
+
 
         }
 

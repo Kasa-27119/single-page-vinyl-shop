@@ -190,18 +190,69 @@ const vinyls = [
     
 ];
 
+// form validation
+// click event on submit button 
+const submitButton = document.getElementById("submit-button");
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    // set up regular epressions
+    const usernameRegex = /^[a-zA-Z0-9]{5,15}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    // get input form elements
+    const usernameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+})
+
 // get elements first - genre filter
 const genreFilterButton = document.getElementById("genreFilter");
+
+// on click for genre filter
+genreFilterButton.addEventListener("change", function() {
+    filterAndPopulateVinylCards();
+    console.log(genreFilterButton.value);
+});
+
+// function for genre filtering
+function filterVinyls() {
+    const filteredVinyls = vinyls.filter(vinyl => {
+
+        // change to lowercase
+        const vinylGenre = vinyl.genre.toLowerCase();
+        const vinylGenreFilterValue = genreFilterButton.value.toLowerCase();
+
+        // if statements
+        if (vinylGenreFilterValue && !vinylGenre.includes(vinylGenreFilterValue)) {
+            return false;
+        }
+
+        return true;
+
+    });
+
+    // return as filtered
+    return filteredVinyls;
+}
+
+// filter and repopulate cards
+function filterAndPopulateVinylCards() {
+    const filteredVinyls = filterVinyls();
+    populateVinylContainer(filteredVinyls);
+}
 
 // initial population
 function populateVinylContainer(vinyls) {
 
-    console.log("working");
-
     // get vinyls container first
     const vinylMainContainer = document.getElementById("vinylContainer");
 
-    // function for populating the container with every object of the vinyls array
+    // clear existing content first
+    vinylMainContainer.innerHTML = "";
+
+    // function for populating
     vinyls.forEach(vinyl => {
         const vinylCard = `
         <div class="vinyl-item-card">
@@ -235,8 +286,6 @@ function populateVinylContainer(vinyls) {
 
         // append card to the main vinyl container
         vinylMainContainer.innerHTML += vinylCard;
-
-        console.log("popFunction working");
 
     });
 

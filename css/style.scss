@@ -120,7 +120,7 @@
                         }
                     }
 
-                    #submitButton {
+                    #submit-button {
                         margin-top: 40px;
                         font-size: 0.5em;
                         min-width: 100%;
@@ -136,7 +136,7 @@
 
                 .vinyl-items-header {
                     min-width: 100%;
-                    min-height: 700px;
+                    min-height: 500px;
                     padding: 20px;
                     margin-top: 85px;
                     display: flex;
@@ -145,10 +145,9 @@
 
                     background-image: url("../imgs/image2.jpg");
 
-
                     h2 {
                         font-size: 2.1em;
-                        margin-top: 320px;
+                        margin-top: 170px;
                         color: #fffef7;
                     }
                 }
@@ -205,13 +204,12 @@
                     min-width: 50%;
 
                     .vinyl-grid-container {
-                        // min-width: 100%;
+                        height: 500px;
                         background-color: #f4f3ef;
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
-                        gap: 15px 20px;
-                        padding: 50px 80px;
-                        max-height: 60vh;
+                        gap: 35px 40px;
+                        padding: 60px 80px;
                         scroll-behavior: auto;
     
                         .vinyl-item-card {
@@ -219,7 +217,8 @@
                             // flex-direction: column;
                             justify-content: flex-start;
                             background-color: rgb(251, 247, 241);
-                            border: 3px solid #e74c3c;
+                            border: 5px solid #e74c3c;
+                            box-shadow: 0 0 0 5px #34a5d5;
                             border-radius: 20px;
                             padding: 18px;
     
@@ -265,7 +264,7 @@
                             .swiper {
                                 max-width: 350px;
                                 max-height: 350px;
-                                border: 1px solid #e74c3c;
+                                border: 3px solid #11191b;
                                 border-radius: 20px;
                                 margin: 0;
         
@@ -297,7 +296,7 @@
 
         .section:nth-child(2) {
             background-color: #3498db;
-            width: 100%;
+            // width: 100%;
         }
 
         .section:nth-child(3) {
@@ -309,7 +308,7 @@
         }
 
         .swiper {
-            width: 600px;
+            width: 300px;
             height: 300px;
         }
     }

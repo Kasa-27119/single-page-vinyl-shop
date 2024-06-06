@@ -192,20 +192,70 @@ const vinyls = [
 
 // form validation
 // click event on submit button 
-const submitButton = document.getElementById("submit-button");
-submitButton.addEventListener("click", function(event) {
+const signUpForm = document.getElementById("signUpForm");
+signUpForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // set up regular epressions
+    // set up regular expressions
     const usernameRegex = /^[a-zA-Z0-9]{5,15}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     // get input form elements
-    const usernameInput = document.getElementById("username");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-})
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+
+    // get error elements
+    const usernameError = document.getElementById("usernameError");
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+
+    // variable to track if inputs are true
+    let isValid = true;
+
+    // validate username
+    if (!usernameRegex.test(username.value)) {
+        usernameError.style.display = "inline";
+        isValid = false;
+    } else {
+        usernameError.style.display = "none";
+    }
+
+    // validate email
+    if (!emailRegex.test(email.value)) {
+        emailError.style.display = "inline";
+        isValid = false;
+    } else {
+        emailError.style.display = "none";
+    }
+
+    // validate password
+    if (!passwordRegex.test(password.value)) {
+        passwordError.style.display = "inline";
+        isValid = false;
+    } else {
+        passwordError.style.display = "none";
+    }
+
+    // if form inputs are all valid
+    if (isValid) {
+        alert("Signed up successfully!");
+
+        // clear input values
+        username.value = "";
+        email.value = "";
+        password.value = "";
+
+        fullpage_api.moveTo("vinyl-page");
+    }
+});
+    
+
+
+
+
+
 
 // get elements first - genre filter
 const genreFilterButton = document.getElementById("genreFilter");

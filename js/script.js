@@ -1,6 +1,3 @@
-// jshint esversion: 6
-
-// initialise jquery
 $(document).ready(function() {
     
     // fullpage initialisation
@@ -14,6 +11,8 @@ $(document).ready(function() {
         fitToSection: true,
     });
 
+    // Initialize modal on image click once
+    modalOnImageClick();
 });
 
 // initialise swiper js
@@ -23,7 +22,8 @@ const swiper = new Swiper(".swiper", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
-    },
+    }
+
 });
 
 const vinyls = [
@@ -191,7 +191,6 @@ const vinyls = [
 ];
 
 // form validation
-// click event on submit button 
 const signUpForm = document.getElementById("signUpForm");
 signUpForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -250,12 +249,6 @@ signUpForm.addEventListener("submit", function(event) {
         fullpage_api.moveTo("vinyl-page");
     }
 });
-    
-
-
-
-
-
 
 // get elements first - genre filter
 const genreFilterButton = document.getElementById("genreFilter");
@@ -314,8 +307,8 @@ function populateVinylContainer(vinyls) {
                 <div class="swiper-wrapper">
                 
                     <!-- Slides -->
-                    <div class="swiper-slide"><img src="${vinyl.image[0]}" alt="${vinyl.name} image 1" class="vinyl-item-image"></div>
-                    <div class="swiper-slide"><img src="${vinyl.image[1]}" alt="${vinyl.name} image 2" class="vinyl-item-image"></div>
+                    <div class="swiper-slide"><img src="${vinyl.image[0]}" alt="${vinyl.name} image 1" class="vinyl-item-image" data-id="${vinyl.id}"></div>
+                    <div class="swiper-slide"><img src="${vinyl.image[1]}" alt="${vinyl.name} image 2" class="vinyl-item-image" data-id="${vinyl.id}"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -349,12 +342,70 @@ function populateVinylContainer(vinyls) {
         },
     });
 
-
 }
 
 // callback to the populate function
 populateVinylContainer(vinyls);
 
+// modal function
+function modalOnImageClick() {
+    // get swiper image class
+    const images = document.querySelectorAll(".vinyl-item-image");
+    // get details modal
+    const vinylModal = document.getElementById("details-modal");
 
+    // for loop on ALL IMAGES - click event
+    for (let i = 0; i < images.length; i++) {
 
+        images[i].addEventListener("click", function(event) {
+            // console.log("img click is working");
+            vinylModal.showModal();
+            document.body.classList.add("modal-open");
 
+            // get the id from the data attribute
+            const vinylId = event.target.getAttribute("data-id");
+            populateModal(vinylId);
+            
+        })
+    }
+
+    // Close function added here to prevent multiple listeners
+    closeVinylModal();
+}
+
+// close modal function
+function closeVinylModal() {
+    // get close button
+    const close = document.getElementById("close-modal");
+    const vinylModal = document.getElementById("details-modal");
+
+    // Remove existing event listener
+    close.removeEventListener("click", closeModalHandler);
+
+    // click event on close 
+    close.addEventListener("click", closeModalHandler);
+}
+
+// Close modal handler function
+function closeModalHandler() {
+    const vinylModal = document.getElementById("details-modal");
+    vinylModal.close();
+    document.body.classList.remove("modal-open");
+}
+
+function populateModal(vinylId) {
+    // get modal
+    const vinylModal = document.querySelector(".modal-content");
+    const vinyl = vinyls.find(v => v.id == vinylId);
+
+    vinylModal.innerHTML = `
+        <img src="${vinyl.image[0]}" alt="${vinyl.name} image 1">
+        <h2>${vinyl.name}</h2>
+        <h3>${vinyl.artist}</h3>
+        <div class="modal-other-details">
+            <h4>${vinyl.price}</h4>
+            <h5>${vinyl.genre}</h5>
+        </div>
+        <button id="add-to-cart-btn">Add To Cart</button>
+    `;
+}

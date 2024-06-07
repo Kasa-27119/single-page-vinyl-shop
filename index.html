@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon - https://www.vecteezy.com/free-png/vinyls" Vinyls PNGs by Vecteezy -->
+    <link rel="icon" type="image/x-icon" href="./imgs/favicon-vinyl.png">
     <!-- swiper css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- jquery ui css -->
@@ -158,10 +160,21 @@
                     </div>
                 </div>
 
+                <!-- vinyl items population container -->
                 <div class="body-container">
                     <!-- vinyl grid container - populated by js -->
                     <div class="vinyl-grid-container" id="vinylContainer"></div>
                 </div>
+
+                <!-- modal -->
+                <dialog id="details-modal">
+                    <button id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+
+                    <div class="modal-content"></div>
+                    
+                </dialog>
+                <!-- dialog ends -->
+                
             </div>
         </div>
         <div class="section"> section 3 </div>

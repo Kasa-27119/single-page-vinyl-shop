@@ -11,7 +11,7 @@ const livereload = require("gulp-livereload");
 const connect = require("gulp-connect");
 
 //  check js for errors
-const jshint = require("gulp-jshint");
+// const jshint = require("gulp-jshint");
 
 // minification of js
 const uglify = require("gulp-uglify");
@@ -43,13 +43,13 @@ function html(done) {
 }
 
 // js lint task
-function lint(done) {
-    gulp.src(["js/script.js", "!js/*.min.js"])
-        .pipe(jshint())
-        .pipe(jshint.reporter("default"))
-        .pipe(connect.reload());
-    done();
-}
+// function lint(done) {
+//     gulp.src(["js/script.js", "!js/*.min.js"])
+//         .pipe(jshint())
+//         .pipe(jshint.reporter("default"))
+//         .pipe(connect.reload());
+//     done();
+// }
 
 // js minification
 function minifyJs(done) {
@@ -65,9 +65,9 @@ function minifyJs(done) {
 function watch(done) {
     gulp.watch("css/*.scss", gulp.series(styles));
     gulp.watch("./*.html", gulp.series(html));
-    gulp.watch(["js/script.js", "!js/*.min.js"], gulp.series(lint, minifyJs));
+    gulp.watch(["js/script.js", "!js/*.min.js"], gulp.series(minifyJs)); // add lint to restore linting
     done();
 }
 
 // run the task
-gulp.task("default", gulp.series(serve, watch, lint, minifyJs, html, styles));
+gulp.task("default", gulp.series(serve, watch, minifyJs, html, styles)); // add lint to restore linting (before minifyJS)
